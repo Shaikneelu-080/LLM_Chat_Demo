@@ -11,7 +11,7 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 st.title("LLM Chat Demo")
 
 
-if "ppchat" not in st.session_state:
+if "chat" not in st.session_state:
     st.session_state.chat = []
 
 
@@ -35,4 +35,6 @@ if prompt:
     reply = res.choices[0].message.content
     st.session_state.chat.append({"role":"assistant","content":reply})
     st.rerun()
+
+
 
